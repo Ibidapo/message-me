@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  input:not([type="submit"]),
+  input[type="submit"] {
+    border-radius: 20px;
+    border: 2px solid #eee;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    width: 215px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+    outline: none;
+  }
+
+  input:not([type="submit"]):hover {
+    border: 2px solid #ee0979;
+  }
+
+  input[type="submit"] {
+    border: none;
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    color: white;
+    cursor: pointer;
+  }
+}

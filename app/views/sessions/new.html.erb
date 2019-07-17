@@ -1,1 +1,14 @@
-<h1 align="center">This is the Login Page</h1>
+<div class="main">
+  <div class="logo">
+    <i class="comments icon"></i> 
+    <p>MessageMe</p>
+  </div>
+
+  <%= form_for :session, url: "/login", method: 'post' do |f| %>
+    <%= f.text_field :username, placeholder: "Username" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <span class="alpha-btn"><%= f.submit "Login" %></span>
+  <% end %>
+
+  <small>You don't have an account? <a href="#">Sign Up</a></small>
+</div>

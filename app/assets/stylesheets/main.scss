@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: white;
+
+  .logo {
+    font-size: 2rem;
+    color:#ee0979;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    i {
+      font-size: 4rem;
+    }
+  }
+
+  small {
+    margin-top: 2rem;
+
+    a {
+      color: #ee0979;
+    }
+  }
+}

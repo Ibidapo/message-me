@@ -11,6 +11,19 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
+//= require semantic-ui
 //= require_tree .
+
+$(document).on('turbolinks:load',function() {
+  $('.ui.dropdown').dropdown();
+
+  $('.screen .ui.sidebar')
+    .sidebar({
+      context: $('.screen .chatbox-segment')
+    })
+    .sidebar('attach events', '.screen .app-nav-bar .left.item')
+    .sidebar('setting', 'transition', 'overlay');
+});

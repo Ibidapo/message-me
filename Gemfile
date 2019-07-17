@@ -16,6 +16,11 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# Use Semantic-UI for frontend
+gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.2.0'
+# Use JQuery for front-end dependencies
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5' 
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
