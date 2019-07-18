@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless logged_in?
-      flash[:error] = "Sign in for gain access"
+      flash[:error] = "Sign in to gain access"
       redirect_to login_path
     end
   end
