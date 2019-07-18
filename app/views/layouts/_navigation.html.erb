@@ -6,19 +6,19 @@
     <i class="battery full icon"></i>
   </div>
 </div>
+<% if logged_in? %>
 <div class="ui top attached menu app-nav-bar">
   <div class="ui left icon item">
-    <i class="chevron left icon"></i>
+    <i class="users icon"></i>
   </div>
   <div class="ui pointing dropdown link top right icon item">
     <i class="ellipsis vertical icon"></i>
     <div class="menu">
       <div class="header">More Options</div>
-      <a class="item">My Profile</a>
-      <a class="item" href="/login">Login</a>
-      <a class="item">Sign Up</a>
-      <div class="divider"></div>
-      <a class="item">Log Out</a>
+        <a class="item">My Profile</a>
+        <div class="divider"></div>
+        <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
     </div>
   </div>
 </div>
+<% end %>

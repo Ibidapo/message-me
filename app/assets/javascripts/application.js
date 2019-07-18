@@ -21,9 +21,11 @@ $(document).on('turbolinks:load',function() {
   $('.ui.dropdown').dropdown();
 
   $('.screen .ui.sidebar')
-    .sidebar({
-      context: $('.screen .chatbox-segment')
-    })
+    .sidebar({ context: $('.screen .chatbox-segment') })
     .sidebar('attach events', '.screen .app-nav-bar .left.item')
     .sidebar('setting', 'transition', 'overlay');
+
+  $('.message .close').on('click', function () {
+    $(this).closest('.message').transition('fade');
+  });
 });
