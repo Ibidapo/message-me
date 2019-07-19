@@ -62,10 +62,10 @@
       </div>
     </div>
     <div class="textarea">
-      <input type="text" value="MAU! :)" />
-      <svg class="sent" width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M26 12.0001L0.0168609 0L1.42326 9.89444L0 12.0001L1.42326 14.1056L0.0168609 24L26 12.0001ZM2.79218 10.5811L9.88985 12.0001L2.79218 13.4189L1.83308 12.0001L2.79218 10.5811ZM22.4035 12.0001L1.91798 21.461L2.84435 14.9433L17.5673 12.0001L2.84435 9.05671L1.91798 2.539L22.4035 12.0001Z" fill="#ee0979"/>
-      </svg>
+      <%= form_for @message, url: "/message", method: 'post' do |f| %>
+        <%= f.text_field :body, placeholder: "Type here..." %>
+        <%= f.button '<i class="paper plane icon"></i>'.html_safe %>
+      <% end %>
     </div>
   </div>
 </div>
