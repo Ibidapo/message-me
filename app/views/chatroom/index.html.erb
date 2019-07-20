@@ -55,14 +55,14 @@
         <p>Welcome onboard to MessageMe</p>
       </div>
       <%= render @messages %>
-      <div class="typing">
+      <!-- <div class="typing">
         <div class="circle cir-1"></div>
         <div class="circle cir-2"></div>
         <div class="circle cir-3"></div>
-      </div>
+      </div> -->
     </div>
     <div class="textarea">
-      <%= form_for @message, url: "/message", method: 'post' do |f| %>
+      <%= form_for @message, url: "/message", method: 'post', remote: true do |f| %>
         <%= f.text_field :body, placeholder: "Type here..." %>
         <%= f.button '<i class="paper plane icon"></i>'.html_safe %>
       <% end %>

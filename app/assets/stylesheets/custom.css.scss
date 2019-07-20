@@ -13,12 +13,16 @@ $color5: #FCF7FF;
   box-sizing: border-box;
 }
 
+.container {
+  padding-top: 3rem;
+}
+
 .mockchat {
   display: flex;
   position: relative;
   color: $color1;
   max-width: 335px;
-  margin: 4rem auto 2rem;
+  margin: auto;
   height: auto;
   line-height: 1.25;
   perspective: 900px;

@@ -9,13 +9,12 @@
     flex: 1;
 
     .chatbox{
-      display: flex;
-      flex-flow: column;
+      display: block;
       flex: 1;
       width: 100%;
-      justify-content: flex-end;
       padding: 15px;
       box-sizing: border-box;
+      overflow-y: auto;
 
       .my-message,
       .your-message {
@@ -27,23 +26,23 @@
       }
 
       .your-message {
-        align-self: flex-start;
+        margin-right: auto;
         background: #fff;
         border-radius: 20px 20px 20px 0;
         background-color: #eee;
       }
 
       .my-message {
-        align-self: flex-end;
+        margin-left: auto;
         background: linear-gradient(to right, #ee0979, #ff6a00);
         border-radius: 20px 20px 0 20px;
         color: #fff;
       }
 
       .typing{
-        align-self: flex-end;
+        margin-left: auto;
         display: flex;
-        padding: 0 5px;
+        padding: 0.5rem;
         box-sizing: border-box;
         align-items: center;
         justify-content: space-around;
