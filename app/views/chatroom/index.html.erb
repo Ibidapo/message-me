@@ -63,8 +63,8 @@
     </div>
     <div class="textarea">
       <%= form_for @message, url: "/message", method: 'post', remote: true do |f| %>
-        <%= f.text_field :body, placeholder: "Type here..." %>
-        <%= f.button '<i class="paper plane icon"></i>'.html_safe %>
+        <%= f.text_field :body, id: "chatbox-input", placeholder: "Type here..." %>
+        <%= f.button '<i class="paper plane icon"></i>'.html_safe, id: "chatbox-btn" %>
       <% end %>
     </div>
   </div>

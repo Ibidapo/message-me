@@ -17,6 +17,29 @@
 //= require semantic-ui
 //= require_tree .
 
+scroll_bottom = function() {
+  chatbox_height = $('.chatbox')[0].scrollHeight;
+
+  if (chatbox_height > 508) {
+    $('.chatbox').animate({ scrollTop: chatbox_height }, 400);
+  }
+}
+
+reset_value = function () {
+  $('#chatbox-input').val("");
+}
+
+reset_input = function() {
+  $('.textare form').on('keydown', function(e) {
+    if (e.keyCode == 13)
+      setTimeout(reset_value, 300)
+  })
+
+  $('#chatbox-btn').on('click', function() {
+    setTimeout(reset_value, 300)
+  })
+}
+
 $(document).on('turbolinks:load',function() {
   $('.ui.dropdown').dropdown();
 
@@ -28,4 +51,7 @@ $(document).on('turbolinks:load',function() {
   $('.message .close').on('click', function () {
     $(this).closest('.message').transition('fade');
   });
+
+  reset_input()
+  scroll_bottom()
 });
