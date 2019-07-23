@@ -15,7 +15,8 @@
     <i class="ellipsis vertical icon"></i>
     <div class="menu">
       <div class="header">More Options</div>
-        <a class="item">My Profile</a>
+        <a class="item" href="/users/<%= current_user.id %>">My Profile</a>
+        <a class="item" href="/users/<%= current_user.id %>/edit">Edit Profile</a>
         <div class="divider"></div>
         <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
     </div>

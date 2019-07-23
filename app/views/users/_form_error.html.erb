@@ -1,0 +1,6 @@
+<% if obj.errors.any? %>
+  <div class="ui error message">
+    <i class="close icon"></i>
+    <p><%= obj.errors.full_messages[0] %></p>
+  </div> 
+<% end %>

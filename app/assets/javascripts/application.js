@@ -52,6 +52,10 @@ $(document).on('turbolinks:load',function() {
     $(this).closest('.message').transition('fade');
   });
 
+  $('.special.cards .image').dimmer({
+    on: 'hover'
+  });
+
   reset_input()
   scroll_bottom()
 });

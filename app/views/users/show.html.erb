@@ -1,0 +1,31 @@
+<div class="main">
+  <h3>My profile</h3>
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="/users/<%= @user.id %>/edit" class="ui inverted button">Edit Profile</a>
+            </div>
+          </div>
+        </div>
+        <%= image_tag 'default-user.jpg' %>
+      </div>
+      <div class="content">
+        <a class="header"><%= @user.username %></a>
+        <div class="description">
+          <% if @user.interest.present? %>
+            <%= @user.interest %>
+          <% else %>
+            <span>What are your interests?<span>
+          <% end %>
+        </div>
+      </div>
+      <div class="extra content">
+        <a class="floated">Joined</a>
+        <a class="right floated"><%= @user.created_at.to_formatted_s(:long) %></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,5 @@
 <div class="main">
-  <div class="logo">
-    <i class="comments icon"></i> 
-    <p>MessageMe</p>
-  </div>
+  <%= render 'layouts/logo'%>
 
   <%= form_for :session, url: "/login", method: 'post' do |f| %>
     <%= f.text_field :username, placeholder: "Username" %>

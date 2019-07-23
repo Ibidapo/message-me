@@ -24,4 +24,18 @@
       color: #ee0979;
     }
   }
+
+  h3 {
+    margin-top: -7rem;
+  }
+
+  .ui.cards {
+    width: 260px !important;
+
+    .description {
+      span {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
 }
