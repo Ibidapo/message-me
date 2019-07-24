@@ -1,5 +1,5 @@
 <%= form_for @user do |f| %>
-  <%= f.text_field :username, placeholder: "Username" %>
+  <%= f.text_field :username, placeholder: "Username", maxlength: 15 %>
   <%= f.password_field :password, placeholder: "Password" %>
   <%= f.submit (@user.new_record? ? "Sign up" : "Update") %>
 <% end %>

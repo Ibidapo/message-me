@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ibidapo-cloudinary
+  api_key: '166518375778483'
+  api_secret: _MCPPnRs2Xyw5Jk5YWTQ8EJxUyM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ibidapo-cloudinary
+  api_key: '166518375778483'
+  api_secret: _MCPPnRs2Xyw5Jk5YWTQ8EJxUyM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ibidapo-cloudinary
+  api_key: '166518375778483'
+  api_secret: _MCPPnRs2Xyw5Jk5YWTQ8EJxUyM
+  enhance_image_tag: true
+  static_file_support: false

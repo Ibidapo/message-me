@@ -17,7 +17,7 @@
     }
   }
 
-  small {
+  > small {
     margin-top: 2rem;
 
     a {
@@ -31,11 +31,39 @@
   }
 
   .ui.cards {
-    width: 260px !important;
+    width: 250px !important;
 
-    .description {
-      span {
-        color: rgba(0, 0, 0, 0.4);
+    .card{
+      box-shadow: none;
+
+      .dimmable.image,
+      .dimmable.image > div,
+      .dimmable.image > img {
+        border-radius: 2rem !important;
+        width: 236px !important;
+        height: 236px !important;
+        object-fit: cover !important;
+      }
+
+      .content,
+      .extra.content {
+        border-top: none;
+        padding: 1rem 0.5rem;
+
+        &:after {
+          display: none;
+        }
+
+        .description {
+          span {
+            color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+
+      .extra.content {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }

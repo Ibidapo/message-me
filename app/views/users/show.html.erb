@@ -10,10 +10,14 @@
             </div>
           </div>
         </div>
-        <%= image_tag 'default-user.jpg' %>
+        <% unless @user.avatar.file.nil? %>
+          <%= image_tag @user.avatar.url %>
+        <% else %>
+          <%= image_tag 'https://res.cloudinary.com/ibidapo-cloudinary/image/upload/v1563959589/message-me/default-user.jpg' %>
+        <% end %>
       </div>
       <div class="content">
-        <a class="header"><%= @user.username %></a>
+        <div class="header"><%= @user.username %></div>
         <div class="description">
           <% if @user.interest.present? %>
             <%= @user.interest %>
@@ -23,8 +27,8 @@
         </div>
       </div>
       <div class="extra content">
-        <a class="floated">Joined</a>
-        <a class="right floated"><%= @user.created_at.to_formatted_s(:long) %></a>
+        <small>Joined</small>
+        <small><%= @user.created_at.to_formatted_s(:long) %></small>
       </div>
     </div>
   </div>

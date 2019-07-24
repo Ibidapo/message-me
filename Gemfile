@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use Hirb to style Rails console
 gem 'hirb', '~> 0.7.3'
+# Use CarrierWave for image upload from form
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+# Use Cloudinary to store uploaded images to the cloud
+gem 'cloudinary', '~> 1.11', '>= 1.11.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
