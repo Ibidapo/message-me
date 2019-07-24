@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_104706) do
+ActiveRecord::Schema.define(version: 2019_07_24_161640) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sender_id"
+    t.integer "recipient_id"
   end
 
   create_table "users", force: :cascade do |t|
