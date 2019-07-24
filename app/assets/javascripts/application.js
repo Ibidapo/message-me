@@ -29,6 +29,18 @@ reset_value = function () {
   $('#chatbox-input').val("");
 }
 
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+      $('#imagePreview').hide();
+      $('#imagePreview').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 reset_input = function() {
   $('.textare form').on('keydown', function(e) {
     if (e.keyCode == 13)
@@ -54,6 +66,10 @@ $(document).on('turbolinks:load',function() {
 
   $('.special.cards .image').dimmer({
     on: 'hover'
+  });
+
+  $("#imageUpload").change(function () {
+    readURL(this);
   });
 
   reset_input()

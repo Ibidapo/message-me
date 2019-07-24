@@ -1,0 +1,35 @@
+<%# <div class="main">
+  <h3>Edit profile</h3>
+  <form id="edit">
+    <div class="avatar-upload">
+      <div class="avatar-edit">
+        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+        <label for="imageUpload"><i class="pencil alternate icon"></i></label>
+      </div>
+      <div class="avatar-preview">
+        <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);"></div>
+      </div>
+    </div>
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+    <textarea name="interest" rows="3" placeholder="What are you interests?"></textarea>
+    <button type="submit">Update</button>
+  </form>
+</div> %>
+
+<div class="main">
+  <h3>Edit profile</h3>
+  <%= form_for @user, html: {id: "edit"}, remote: true do |f| %>
+    <div class="avatar-upload">
+      <div class="avatar-edit">
+        <%= f.file_field :avatar, id: "imageUpload" %>
+        <label for="imageUpload"><i class="pencil alternate icon"></i></label>
+      </div>
+      <div class="avatar-preview">
+        <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);"></div>
+      </div>
+    </div>
+    <%= f.text_area :interest, size: "autox3", placeholder: "What are your interests?"%>
+    <%= f.submit "Update" %>
+  <% end %>
+</div>
