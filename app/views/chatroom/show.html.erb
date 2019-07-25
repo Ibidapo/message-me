@@ -1,0 +1,18 @@
+<div class="pusher">
+  <div class="chatbox">
+    <%= render @messages %>
+    <div class="typing">
+      <div class="circle cir-1"></div>
+      <div class="circle cir-2"></div>
+      <div class="circle cir-3"></div>
+    </div>
+  </div>
+  <div class="textarea">
+    <%= form_for @message, url: "/message", method: 'post', remote: true do |f| %>
+      <%= f.text_field :body, id: "chatbox-input", placeholder: "Type here..." %>
+      <%= f.hidden_field :recipient_id, value: "#{params[:id]}" %>
+      <%= f.hidden_field :sender_id, value: "#{session[:user_id]}" %>
+      <%= f.button '<i class="paper plane icon"></i>'.html_safe, id: "chatbox-btn" %>
+    <% end %>
+  </div>
+</div>

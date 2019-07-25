@@ -6,5 +6,11 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('.chatbox').append data.message
+    class_name =  if "#{window.location.href.split('/')[4]}" == "#{data.message.recipient_id}" then "my-message" else "your-message"
+
+    $('.chatbox').append """
+      <div class='#{class_name}'>
+        <p>#{data.message.body}</p>
+      </div>
+    """
     scroll_bottom()

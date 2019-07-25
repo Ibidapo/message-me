@@ -1,3 +1,3 @@
-<div class="<%= if session[:user_id] == message.sender.id then 'my-message' else 'your-message' end %>">
+<div class="<%= if session[:user_id]  == message.recipient_id then 'your-message' else 'my-message' end %>">
   <p><%= message.body %></p>
 </div>

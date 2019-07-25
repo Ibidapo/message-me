@@ -2,18 +2,16 @@ class MessagesController < ApplicationController
   before_action :require_user
 
   def create
-    message = current_user.messages.build(message_params)
+    message = Message.new(message_params)
     if message.save
-      ActionCable.server.broadcast "chatroom_channel", message: render_message(message)
+      ActionCable.server.broadcast "chatroom_channel", message: message
+    else
+      flash.now[:error] = "Message failed"
     end
   end
 
   private
   def message_params
-    params.require(:message).permit(:body)
-  end
-
-  def render_message(message)
-    render partial: 'message', locals: { message: message }
+    params.require(:message).permit(:body, :recipient_id, :sender_id)
   end
 end
