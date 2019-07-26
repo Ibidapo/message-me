@@ -87,3 +87,45 @@ form#edit {
     }
   }
 }
+
+#chatroom {
+  .menu {
+    width: 100%;
+    border: none;
+
+    .item {
+      display: flex;
+
+      img {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+      }
+
+      .interest {
+        font-size: 90%;
+        color: rgba(0, 0, 0, 0.4);
+        margin-top: 0.5rem;
+        white-space: nowrap; 
+        width: 215px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+      }
+    }
+  }
+
+  .main {
+    h3 {
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    span {
+      font-size: 2rem;
+      color: #ee0979;
+    }
+  }
+}
+

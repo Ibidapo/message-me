@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :all_users
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -21,5 +21,9 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You're already logged in"
       redirect_to root_path
     end
+  end
+
+  def all_users
+    @all_users = User.all
   end
 end

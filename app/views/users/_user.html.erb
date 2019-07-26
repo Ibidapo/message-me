@@ -1,0 +1,13 @@
+<a class="item" href="/chatroom/<%= user.id %>">
+  <img src="
+    <% unless user.avatar.file.nil? %>
+      <%= user.avatar.url %>
+    <% else %>
+      https://res.cloudinary.com/ibidapo-cloudinary/image/upload/v1563959589/message-me/default-user.jpg
+    <% end %>" alt="avatar" 
+  />
+  <div class="content">
+    <div class="name"><%=  user.username %></div>
+    <div class="interest"><%= user.interest %></div>
+  </div>
+</a>

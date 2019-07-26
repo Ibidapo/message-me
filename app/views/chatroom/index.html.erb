@@ -1,16 +1,12 @@
-<div class="pusher">
-  <div class="chatbox">
-    <%= render @messages %>
-    <!-- <div class="typing">
-      <div class="circle cir-1"></div>
-      <div class="circle cir-2"></div>
-      <div class="circle cir-3"></div>
-    </div> -->
-  </div>
-  <div class="textarea">
-    <%= form_for @message, url: "/message", method: 'post', remote: true do |f| %>
-      <%= f.text_field :body, id: "chatbox-input", placeholder: "Type here..." %>
-      <%= f.button '<i class="paper plane icon"></i>'.html_safe, id: "chatbox-btn" %>
-    <% end %>
-  </div>
+<div class="pusher" id="chatroom">
+  <% if @users.present? %>
+    <div class="ui vertical menu">
+      <%= render @users %>
+    </div>
+  <% else %>
+    <div class="main">
+      <h3>Start chatting on </h3>
+      <%= render 'layouts/logo' %>
+    </div>
+  <% end %>
 </div>

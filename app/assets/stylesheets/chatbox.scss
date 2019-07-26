@@ -118,35 +118,29 @@
 
   .sidebar {
     background-color: white !important;
+    width: 100%;
+    border: none;
 
     .item {
       display: flex !important;
-      align-items: center;
 
       img {
-        border-radius: 50%;
-        margin-right: 1rem !important;
+        height: 3rem;
         width: 3rem !important;
+        margin-right: 1rem !important;
+        border-radius: 0.5rem;
+        object-fit: cover;
       }
 
-      .online,
-      .offline {
-        position: absolute;
-        display: inline-block;
-        bottom: 0.6rem;
-        left: 3.75rem;
-        height: 10px;
-        width:10px;
-        border-radius: 50%;
+      .interest {
+        font-size: 90%;
+        color: rgba(0, 0, 0, 0.4);
+        margin-top: 0.5rem;
+        white-space: nowrap; 
+        width: 165px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
       }
-
-      .online {
-        background: #04c604;
-      }
-
-      .offline {
-        background: #fe5a5a;
-      } 
     }
   }
 }
