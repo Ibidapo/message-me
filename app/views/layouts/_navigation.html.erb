@@ -11,12 +11,19 @@
   <div class="ui left icon item">
     <i class="users icon"></i>
   </div>
+  <div class="ui center item">
+    <% if @guest.present? %>
+      To:&nbsp;&nbsp;&nbsp;<span><%= @guest.username %></span>
+    <% else %>
+      <span>My Chats<span>
+    <% end %>
+  </div>
   <div class="ui pointing dropdown link top right icon item">
     <i class="ellipsis vertical icon"></i>
     <div class="menu">
       <div class="header">More Options</div>
+        <a class="item" href="/">My Chats</a>
         <a class="item" href="/users/<%= current_user.id %>">My Profile</a>
-        <a class="item" href="/users/<%= current_user.id %>/edit">Edit Profile</a>
         <div class="divider"></div>
         <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
     </div>

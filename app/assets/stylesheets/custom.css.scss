@@ -95,8 +95,21 @@ $color5: #FCF7FF;
         margin-top: 0;
         border-radius: 0;
 
-        i {
+        i, .header {
           color: #ee0979;
+        }
+
+        .center {
+          flex: 1;
+          color: rgba(0, 0, 0, 0.4);
+
+          &:before {
+            display: none;
+          }
+
+          span {
+            color: #ee0979;
+          }
         }
       }
 

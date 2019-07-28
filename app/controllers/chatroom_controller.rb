@@ -11,6 +11,7 @@ class ChatroomController < ApplicationController
   end
 
   def show
+    @guest = User.find(params[:id])
     @message = Message.new
     @messages = Message.where(recipient_id: params[:id], sender_id: session[:user_id]).
                         or(Message.where(recipient_id: session[:user_id], sender_id: params[:id]))
