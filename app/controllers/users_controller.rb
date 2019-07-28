@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :logged_in_redirect, only: [:new, :create]
   before_action :set_user, except: [:new, :create]
+  before_action :require_user, except: [:new, :create]
+  before_action :require_same_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -41,5 +43,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    unless logged_in? && (current_user == @user)
+      flash[:error] = "Access denied"
+      redirect_to root_path
+    end
   end
 end

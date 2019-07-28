@@ -13,9 +13,11 @@
   </div>
   <div class="ui center item">
     <% if @guest.present? %>
-      To:&nbsp;&nbsp;&nbsp;<span><%= @guest.username %></span>
-    <% else %>
+      To:&nbsp;&nbsp;&nbsp;<span><a href="/users/<%= @guest.id%>"><%= @guest.username %></a></span>
+    <% elsif current_page?(controller: 'chatroom', action: 'index') %>
       <span>My Chats<span>
+    <% else %>
+      <span>Profile</span>
     <% end %>
   </div>
   <div class="ui pointing dropdown link top right icon item">

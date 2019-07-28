@@ -1,6 +1,6 @@
 <div class="main">
-  <h3>My profile</h3>
-  <div class="ui special cards">
+  <h3>Profile</h3>
+  <div class="ui <%= 'special' if session[:user_id].to_s == params[:id] %> cards">
     <div class="card">
       <div class="blurring dimmable image">
         <div class="ui dimmer">
