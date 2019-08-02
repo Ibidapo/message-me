@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #  Configure Action Cable's Production URI
-  config.web_socket_server_url = "wss://ibidapo-message-me.herokuapp.com/cable" 
+  config.web_socket_server_url = "wss://ibidapo-message-me.herokuapp.com/cable"
 
   # Allowed Request Origins
   config.action_cable.allowed_request_origins = ['https://ibidapo-message-me.herokuapp.com', 'http://ibidapo-message-me.herokuapp.com']

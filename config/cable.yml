@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:318c499c9c8fbfb882b2942a35d17302@dory.redistogo.com:10913/
+  url: <%= ENV['REDISTOGO_URL'] %>
   channel_prefix: message-me_production
