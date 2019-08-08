@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to MessageMe! #{@user.username}"
       redirect_to user_path(@user)
     else
+      flash.now[:error] = "Invalid credentials"
       render 'new'
     end
   end
