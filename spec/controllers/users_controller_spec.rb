@@ -3,6 +3,7 @@ require_relative '../helpers/sessions_helper.rb'
 
 RSpec.describe UsersController, type: :controller do
   let(:user) { create(:user) }
+  include SessionsHelper
 
   describe 'GET #new' do
     context 'when url is loaded' do
@@ -43,9 +44,14 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET #show' do
-    include SessionsHelper
+    context 'when user is not logged in' do
+      it 'should render the login template' do
+        get :show, params: { id: user.id }
+        expect(response).to redirect_to login_path
+      end
+    end
 
-    context 'when url is loaded' do
+    context 'when user is logged in' do
       before do
         login(user) 
       end
@@ -53,6 +59,26 @@ RSpec.describe UsersController, type: :controller do
       it 'should render the show template' do
         get :show, params: { id: user.id }
         expect(response).to render_template :show
+      end
+    end
+  end
+
+  describe 'GET #edit' do
+    context 'when user is not logged in' do
+      it 'should render the login template' do
+        get :edit, params: { id: user.id }
+        expect(response).to redirect_to login_path
+      end
+    end
+
+    context 'when user is logged in' do
+      before do
+        login(user) 
+      end
+      
+      it 'should render the show template' do
+        get :edit, params: { id: user.id }
+        expect(response).to render_template :edit
       end
     end
   end
