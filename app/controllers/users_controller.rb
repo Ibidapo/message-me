@@ -29,6 +29,7 @@ class UsersController < ApplicationController
       flash[:success] = "Your profile updated successfully"
       redirect_to user_path(@user)
     else
+      flash[:error] = "Something went wrong :("
       render 'edit'
     end
   end

@@ -76,9 +76,30 @@ RSpec.describe UsersController, type: :controller do
         login(user) 
       end
       
-      it 'should render the show template' do
+      it 'should render the edit template' do
         get :edit, params: { id: user.id }
         expect(response).to render_template :edit
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+    context 'when user is not logged in' do
+      it 'should render the login template' do
+        patch :update, params: { id: user.id, user: { avatar: '', interest: 'Giving love' } }
+        expect(response).to redirect_to login_path
+      end
+    end
+
+    context 'when user is logged in' do
+      before do
+        login(user) 
+      end
+      
+      it 'should redirect to show template' do
+        patch :update, params: { id: user.id, user: { avatar: '', interest: 'Giving love' } }
+        expect(flash[:success]).to eq "Your profile updated successfully"
+        expect(response).to redirect_to user_path(user)
       end
     end
   end
