@@ -10,8 +10,10 @@ FactoryBot.define do
   end
 
   factory :message do
-    body { "What if I say by Fireboy" }
-    recipient_id { "1" }
-    sender_id { "2" }
+    body { "Hi, are you online?" }
+  end
+
+  factory :another_message, class: 'Message' do
+    body { "Hey, Yes! Welcome to MessageMe" }
   end
 end
